@@ -1,0 +1,8 @@
+prefix=/home/florian/catkin_workspace/devel
+
+Name: donut
+Description: Description of donut
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/florian/catkin_workspace/devel/lib 
+Requires: 

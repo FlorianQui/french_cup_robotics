@@ -1,0 +1,8 @@
+prefix=/home/florian/catkin_workspace/install
+
+Name: robot2
+Description: Description of robot2
+Version: 0.0.0
+Cflags: -I/home/florian/catkin_workspace/install/include
+Libs: -L/home/florian/catkin_workspace/install/lib 
+Requires: message_runtime

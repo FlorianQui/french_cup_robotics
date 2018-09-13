@@ -1,0 +1,17 @@
+<launch>
+ 
+ <node pkg="rosserial_python" type="serial_node.py" name="node_move">
+    <param name="port" value="/dev/ttyUSB0"/>
+    <param name="baud" value="57600"/>
+  </node>
+
+  <node pkg="rosserial_python" type="serial_node.py" name="node_balls">
+    <param name="port" value="/dev/ttyACM0"/>
+    <param name="baud" value="57600"/>
+  </node>
+
+<!-- <node pkg="robot2" type="LaunchRobot.py" name="node_launcher"/>-->
+	<node pkg="robot2" type="Master.py" name="master" output="screen">
+		<param name="side" value="0"/>
+	</node>
+</launch>
