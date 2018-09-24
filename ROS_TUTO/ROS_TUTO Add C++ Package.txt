@@ -1,0 +1,34 @@
+In order to compile and execute c++ node with ros, we have to set the Catkin make package up.
+
+Here is an example to compiling and executing it using rosrun.
+Make sure you've launch roscore before in an annex terminal.
+
+- We first need to create the package : 
+	cd ~/catkin_ws/src #move to the catkin directory
+	catkin_create_pkg myPackageName roscpp std_msgs genmsg #create the new pkg named myPackageName
+	cm #if no errors after catkin make, the pkg has been successfully created
+
+- Create the c++ file
+	cs
+	roscd myPackageName/src
+	mkdir scripts launch
+	cd scripts
+	nano myCppFile.cpp and write down :
+		
+		#import "ros/ros.h"
+		int main(int argc, char **argv){
+			return 0;
+		}
+	
+	roscd myPackageName
+	nano CMakeLists.txt
+	
+	Get down to "BUILD" and uncomment include in the include_directories
+	Get down and uncomment add_executable
+	Still in add_executable alter add_executable( myCppFile src/scripts/myCppFile.cpp )
+	Get down and uncomment target_link_libraries and alter target_link_libraries( myCppFile.cpp ${catkin_LIBRARIES} )
+
+- "Make" it and run the executable
+	cm
+	rosrun myPackageName 
+	
