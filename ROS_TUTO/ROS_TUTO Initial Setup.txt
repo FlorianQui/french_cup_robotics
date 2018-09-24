@@ -1,0 +1,68 @@
+Liste des setups à faire avant de travailler sur ROS
+
+/*Je vous ferais la version propre du doc la semaine prochaine*/
+
+/*Attention : Il faut retirer les guillemets lors des commande console*/
+
+1. Installer Ubuntu 16.04 Xenial en dual-boot (pas en VM)
+	- Télécharger Ubuntu 16.04 http://old-releases.ubuntu.com/releases/16.04.0/ubuntu-16.04-desktop-amd64.iso
+	- Télécharger Etcher https://etcher.io/
+	- Installer Ubuntu Xenial sur une clé avec etcher
+	- Brancher la clef sur l'ordi et lancer la clé bootable avec le BIOS (ATTENTION : Il peut y avoir des modifs à faire sur le BIOS, regardez les paramètres recquis en fct de votre machine (constructeur))
+	- Lancer l'installation
+	- Une fois l'installation terminée, allez dans "Pilotes Additionnels" et envoyez moi un screen-shot de la page. Il y aura peut-être des changements à faire.
+
+2. Comprendre Linux
+	- Les commandes de base de Linux : https://www.youtube.com/watch?v=Rira_tat9Ho
+	- Qu'est-ce qu'un compilateur : https://www.youtube.com/watch?v=4lXp_89c3RU
+	- Installer gcc https://doc.ubuntu-fr.org/gcc
+
+3. Comprendre GIT
+	- Installer GIT si ce n'est pas déjà fait : https://doc.ubuntu-fr.org/git
+	- Tuto : https://www.youtube.com/watch?v=aQj86UD8mwA
+
+4. Installer ROS Kinetic sur Ubuntu 16.04
+	- Installer ROS Kinetic : http://wiki.ros.org/kinetic/Installation/Ubuntu
+	- Une fois l'installation terminée, tapez dans un terminal : "sudo nano ~/.bashrc". Déplacez-vous tout en bas avec la flèche, et collez les 4 lignes ci-dessous (CTRL+SHIFT+V pour coller en mode console)
+		- "source /opt/ros/kinetic/setup.bash"
+		- "source ~/catkin_ws/devel/setup.bash"
+		- "alias cw='cd ~/catkin_ws'"
+		- "alias cs='cd ~/catkin_ws/src'"
+		- "alias cm='cd ~/catkin_ws && catkin_make'"
+	- Lancer "roscore" depuis un terminal (CTRL+ALT+T)
+	- Ouvrir 2 autres terminals
+	- Tapez dans l'un : "rostopic echo /test" puis ENTER
+	- Dans l'autre : "rostopic pub /test std_msgs/Int32 1" puis ENTER
+	- Si dans le premier terminal, un 1 apparait, c'est que l'installation est bien faite. Sinon, envoyez l'erreur ou regardez sur internet ;)
+
+5. Installer la librairies Rosserial sur Arduino
+	- Ouvrir un terminal et tapez : "sudo apt-get install ros-indigo-rosserial-arduino" puis "sudo apt-get install ros-indigo-rosserial"
+	- Puis : "cd catkin_ws/src" -> "git clone https://github.com/ros-drivers/rosserial.git" -> "cd .." -> "cm" -> "roscore"
+	- Dans un autre terminal : "cd" -> "cd sketchbook/librairies" -> "rosrun rosserial_arduino make_libraries.py ."
+	- Ouvrir IDE Arduino, File, ????
+
+5. Comprendre ROS
+	- Lire le chapitre 4 du doc : https://github.com/FlorianQui/french_cup_robotics/blob/master/ROS_Robot_Programming_EN.pdf
+	- Les notions essentielles : 
+		- NODE ( Package )
+		- MASTER
+		- Message
+		- Topic
+		- Service
+		- Action
+	Pas besoin de savoir les utiliser pour l'instant, surtout comprendre la logique.
+
+6. Apprendre le C++
+	- Bien comprendre la OOP (Object-oriented programming)
+	- Comprendre les pointeurs
+	- Comprendre les "Shift operator"
+	- Bien nommer ses variables et fct : https://tdinfo.phelma.grenoble-inp.fr/2Aproj/fiches/coding_styles.pdf
+
+7. Installer VS Code
+	- Installer VS Code (stable .deb) : https://code.visualstudio.com/
+
+Si vous avez des questions, je suis là ! :p
+
+A RAJOUTER : ROS sur arduino
+
+
