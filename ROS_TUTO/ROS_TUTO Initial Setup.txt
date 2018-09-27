@@ -39,7 +39,6 @@ Liste des setups à faire avant de travailler sur ROS
 	- Ouvrir un terminal et tapez : "sudo apt-get install ros-indigo-rosserial-arduino" puis "sudo apt-get install ros-indigo-rosserial"
 	- Puis : "cd catkin_ws/src" -> "git clone https://github.com/ros-drivers/rosserial.git" -> "cd .." -> "cm" -> "roscore"
 	- Dans un autre terminal : "cd" -> "cd sketchbook/librairies" -> "rosrun rosserial_arduino make_libraries.py ."
-	- Ouvrir IDE Arduino, File, ????
 
 5. Comprendre ROS
 	- Lire le chapitre 4 du doc : https://github.com/FlorianQui/french_cup_robotics/blob/master/ROS_Robot_Programming_EN.pdf
@@ -61,8 +60,6 @@ Liste des setups à faire avant de travailler sur ROS
 7. Installer VS Code
 	- Installer VS Code (stable .deb) : https://code.visualstudio.com/
 
-Si vous avez des questions, je suis là ! :p
-
-A RAJOUTER : ROS sur arduino
+Si vous avez des questions, je suis là ! :p (Contactez moi sur FB Florian Quibel)
 
 
